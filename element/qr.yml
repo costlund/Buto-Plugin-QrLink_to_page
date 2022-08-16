@@ -1,0 +1,7 @@
+-
+  type: widget
+  data:
+    plugin: qr/php_qr_code_1_1_4
+    method: png
+    data:
+      text: rs:url
