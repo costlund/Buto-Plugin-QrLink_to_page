@@ -7,4 +7,11 @@ class PluginQrLink_to_page{
     $element->setByTag(array('url' => wfServer::calcUrl(true)));
     wfDocument::renderElement($element);
   }
+  public function get_src($filename){
+    $url = wfServer::calcUrl(true);
+    wfPlugin::includeonce('qr/php_qr_code_1_1_4');
+    $qr = new PluginQrPhp_qr_code_1_1_4();
+    $qr->save_file($filename, $url);
+    return $qr->src;
+  }
 }
